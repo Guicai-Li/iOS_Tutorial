@@ -38,6 +38,12 @@ class ViewController: UIViewController {
         collision.translatesReferenceBoundsIntoBoundary = true
         animator.addBehavior(collision)
         
+        let barrier = UIView(frame: CGRect(x: 0, y: 300, width: 130, height: 20))
+        barrier.backgroundColor = UIColor.redColor()
+        view.addSubview(barrier)
+        
+        
+        
         
     }
 

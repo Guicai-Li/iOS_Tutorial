@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    /*
+        UIDynamicAnimator是UIkit的物理引擎。它根据物体指定的物理效果而产生运动轨迹，比如重力等效果。
+    */
+    
     var animator: UIDynamicAnimator! // 动力动画
     var gravity: UIGravityBehavior! // 重力
 

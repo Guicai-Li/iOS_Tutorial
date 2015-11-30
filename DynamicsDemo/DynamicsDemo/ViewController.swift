@@ -47,6 +47,9 @@ class ViewController: UIViewController {
         
         collision = UICollisionBehavior(items: [square, barrier])
         animator.addBehavior(collision)
+        
+        collision.addBoundaryWithIdentifier("barrier", forPath: UIBezierPath(rect: barrier.frame))
+
 
         
         

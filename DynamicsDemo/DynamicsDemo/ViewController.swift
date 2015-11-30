@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var animator: UIDynamicAnimator! // 动力动画
+    var gravity: UIGravityBehavior! // 重力
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +20,10 @@ class ViewController: UIViewController {
         let square = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
         square.backgroundColor = UIColor.grayColor()
         view.addSubview(square)
+        
+        animator = UIDynamicAnimator(referenceView: view)
+        gravity = UIGravityBehavior(items: [square])
+        animator.addBehavior(gravity)
     }
 
     override func didReceiveMemoryWarning() {

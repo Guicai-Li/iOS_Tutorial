@@ -87,5 +87,7 @@ Neither of the behaviors in your current code is “aware” of the barrier, so 
 
 [Introduction to UIKit Dynamics](http://www.teehanlax.com/blog/introduction-to-uikit-dynamics/)
 
+[UIDynamics in Swift](https://www.bignerdranch.com/blog/uidynamics-in-swift/)
+
 
 

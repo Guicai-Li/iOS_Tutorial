@@ -49,6 +49,9 @@ class ViewController: UIViewController {
         animator.addBehavior(collision)
         
         collision.addBoundaryWithIdentifier("barrier", forPath: UIBezierPath(rect: barrier.frame))
+        collision.action = {
+            print("\(NSStringFromCGAffineTransform(square.transform)) \(NSStringFromCGPoint(square.center))")
+        }
 
 
         

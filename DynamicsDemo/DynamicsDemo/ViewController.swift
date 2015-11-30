@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     /*
         UIDynamicAnimator是UIkit的物理引擎。它根据物体指定的物理效果而产生运动轨迹，比如重力等效果。
@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         */
         
         collision = UICollisionBehavior(items: [square])
+        collision.collisionDelegate = self
         collision.translatesReferenceBoundsIntoBoundary = true
         animator.addBehavior(collision)
         
@@ -52,19 +53,32 @@ class ViewController: UIViewController {
         collision.action = {
             print("\(NSStringFromCGAffineTransform(square.transform)) \(NSStringFromCGPoint(square.center))")
         }
-
-
-        
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    // MARK: - UICollisionBehaviorDelegate
+    func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {
+        print("behavior: \(behavior) item:\(item) identifier:\(identifier) point:\(p)")
+        
+    }
 
+    func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item1: UIDynamicItem, withItem item2: UIDynamicItem, atPoint p: CGPoint) {
+        print("behavior: \(behavior) item1:\(item1) item2:\(item2) point:\(p)")
+    }
+    
+    
+    func collisionBehavior(behavior: UICollisionBehavior, endedContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?) {
+        print("behavior: \(behavior) item:\(item) identifier:\(identifier)")
+    }
+    
+    func collisionBehavior(behavior: UICollisionBehavior, endedContactForItem item1: UIDynamicItem, withItem item2: UIDynamicItem) {
+        print("behavior: \(behavior) item1:\(item1) item2:\(item2)")
+    }
 
 }
 

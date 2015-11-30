@@ -18,6 +18,8 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     var gravity: UIGravityBehavior! // 重力
     var collision: UICollisionBehavior! // 碰撞  通过UICollisionBehavior指定一个边界
 
+    var firstContact = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -53,6 +55,22 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         collision.action = {
             print("\(NSStringFromCGAffineTransform(square.transform)) \(NSStringFromCGPoint(square.center))")
         }
+        
+        let itemBehaviour = UIDynamicItemBehavior(items: [square])
+        itemBehaviour.elasticity = 0.6
+        itemBehaviour.density = 30
+        animator.addBehavior(itemBehaviour)
+        
+        /*
+            介绍几个属性：
+            elasticity：弹性系数 // Usually between 0 (inelastic) and 1 (collide elastically) 
+            friction：摩擦系数 0 being no friction between objects slide along each other
+            density：质量 1 by default
+            resistance：阻力系数 0: no velocity damping
+            angularResistance：旋转系数 0: no angular velocity damping
+            allowsRotation：是否能旋转
+        */
+        
     }
 
     override func didReceiveMemoryWarning() {

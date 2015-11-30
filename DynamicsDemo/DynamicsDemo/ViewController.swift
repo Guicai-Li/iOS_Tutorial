@@ -42,6 +42,7 @@ class ViewController: UIViewController {
         barrier.backgroundColor = UIColor.redColor()
         view.addSubview(barrier)
         
+        // 思考？从目前看到的效果来说，并没有产生任何物理碰撞，那如何才能产生碰撞效果？
         
         
         

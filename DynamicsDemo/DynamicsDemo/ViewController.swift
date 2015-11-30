@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var animator: UIDynamicAnimator! // 动力动画
     var gravity: UIGravityBehavior! // 重力
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -28,6 +29,13 @@ class ViewController: UIViewController {
         animator = UIDynamicAnimator(referenceView: view)
         gravity = UIGravityBehavior(items: [square])
         animator.addBehavior(gravity)
+        
+        /*
+            重力效果公式：distance = 0.5 * g * time2; (g = 9.8m/s^2)
+        */
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

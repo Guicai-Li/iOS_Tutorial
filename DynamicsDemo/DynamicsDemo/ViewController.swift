@@ -17,6 +17,9 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     var animator: UIDynamicAnimator! // 动力动画
     var gravity: UIGravityBehavior! // 重力
     var collision: UICollisionBehavior! // 碰撞  通过UICollisionBehavior指定一个边界
+    
+    var snap : UISnapBehavior!
+    var square : UIView!
 
     var firstContact = false
     
@@ -24,7 +27,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let square = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        square = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
         square.backgroundColor = UIColor.grayColor()
         view.addSubview(square)
         
@@ -53,7 +56,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         
         collision.addBoundaryWithIdentifier("barrier", forPath: UIBezierPath(rect: barrier.frame))
         collision.action = {
-            print("\(NSStringFromCGAffineTransform(square.transform)) \(NSStringFromCGPoint(square.center))")
+            print("\(NSStringFromCGAffineTransform(self.square.transform)) \(NSStringFromCGPoint(self.square.center))")
         }
         
         let itemBehaviour = UIDynamicItemBehavior(items: [square])
@@ -82,7 +85,11 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     // MARK: - UICollisionBehaviorDelegate
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {
         print("behavior: \(behavior) item:\(item) identifier:\(identifier) point:\(p)")
-        
+        let collidingView = item as! UIView
+        collidingView.backgroundColor = UIColor.yellowColor()
+        UIView.animateWithDuration(0.3) {
+            collidingView.backgroundColor = UIColor.grayColor()
+        }
     }
 
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item1: UIDynamicItem, withItem item2: UIDynamicItem, atPoint p: CGPoint) {
@@ -98,5 +105,14 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         print("behavior: \(behavior) item1:\(item1) item2:\(item2)")
     }
 
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if (snap != nil) {
+            animator.removeBehavior(snap)
+        }
+        let touch = touches.first
+        snap = UISnapBehavior(item: square, snapToPoint: touch!.locationInView(view))
+        animator.addBehavior(snap)
+    }
 }
 

@@ -16,6 +16,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var amountSlider: UISlider!
     var context : CIContext!
     var filter : CIFilter!
     var beginImage : CIImage!
@@ -86,8 +87,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
             print("[line=87]info=\(info)")
         self.dismissViewControllerAnimated(true, completion: nil)
+        
+        let gotImg = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        beginImage = CIImage(image: gotImg)
+        
+        filter.setValue(beginImage, forKey: kCIInputImageKey)
+        
+        self.amountSliderValueChanged(self.amountSlider) //好机智...
     }
-    
-    
 }
 

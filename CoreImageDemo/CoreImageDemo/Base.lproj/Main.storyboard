@@ -68,6 +68,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="amountSlider" destination="jCf-LB-MBy" id="swc-ct-KQ1"/>
                         <outlet property="imageView" destination="f3Y-de-I7p" id="O7Y-G8-NCD"/>
                     </connections>
                 </viewController>

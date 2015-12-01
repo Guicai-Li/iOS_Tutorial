@@ -30,6 +30,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="uJB-aT-6wk"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="amountSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="kgv-tJ-oXG"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIL-94-mDe">
                                 <rect key="frame" x="491" y="558" width="89" height="30"/>

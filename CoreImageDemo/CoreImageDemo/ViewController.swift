@@ -16,15 +16,19 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    var context : CIContext!
+    var filter : CIFilter!
+    var beginImage : CIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         let fileURL = NSBundle.mainBundle().URLForResource("image", withExtension: "png")
         
-        let beginImage = CIImage(contentsOfURL: fileURL!)
+        beginImage = CIImage(contentsOfURL: fileURL!)
         
-        let filter = CIFilter(name: "CISepiaTone")!
+        filter = CIFilter(name: "CISepiaTone")!
     
         filter.setValue(beginImage, forKey: kCIInputImageKey)
         
@@ -34,7 +38,7 @@ class ViewController: UIViewController {
 //        
 //        self.imageView.image = newImage
         
-        let context = CIContext(options: nil)
+        context = CIContext(options: nil)
         
         let cgimg = context.createCGImage(filter.outputImage!, fromRect: filter.outputImage!.extent)
         
@@ -49,6 +53,22 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func amountSliderValueChanged(sender: AnyObject) {
+        
+        var slider = sender as! UISlider
+        
+        let sliderValue = slider.value
+        
+        filter.setValue(sliderValue, forKey: kCIInputIntensityKey)
+        
+        let outputImg = filter.outputImage
+        
+        let cgImg = context.createCGImage(outputImg!, fromRect: outputImg!.extent)
+        
+        let newImg = UIImage(CGImage: cgImg)
+        
+        self.imageView.image = newImg
+        
+    }
 }
 

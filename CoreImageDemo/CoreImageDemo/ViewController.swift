@@ -8,6 +8,10 @@
 
 import UIKit
 
+import AssetsLibrary
+
+import Photos
+
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     /*
@@ -96,5 +100,33 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         self.amountSliderValueChanged(self.amountSlider) //好机智...
     }
+    
+    @IBAction func savePhoto(sender: AnyObject) {
+        
+        let imageToSave = filter.outputImage
+        
+        let softwareContext = CIContext(options: [kCIContextUseSoftwareRenderer : true])
+        
+        let cgimg = softwareContext.createCGImage(imageToSave!, fromRect: imageToSave!.extent)
+        
+        let library = ALAssetsLibrary()
+//        // 恭喜你，iOS9.0弃用
+//        library.writeImageToSavedPhotosAlbum(cgimg, metadata: imageToSave!.properties, completionBlock: nil)
+
+        
+
+        PHPhotoLibrary.sharedPhotoLibrary().performChanges({ () -> Void in
+            
+            PHAssetChangeRequest.creationRequestForAssetFromImage(UIImage(CGImage: cgimg))
+            
+            }) { (success, error) -> Void in
+                if success {
+                    print("保存成功")
+                }
+        }
+
+    }
+    
+    
 }
 

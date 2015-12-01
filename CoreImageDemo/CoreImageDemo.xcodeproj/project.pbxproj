@@ -14,6 +14,7 @@
 		DCE729D11C0D35110038294E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCE729CF1C0D35110038294E /* LaunchScreen.storyboard */; };
 		DCE729DC1C0D35110038294E /* CoreImageDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE729DB1C0D35110038294E /* CoreImageDemoTests.swift */; };
 		DCE729E71C0D35110038294E /* CoreImageDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE729E61C0D35110038294E /* CoreImageDemoUITests.swift */; };
+		DCE729F51C0D35FE0038294E /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE729F41C0D35FE0038294E /* image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		DCE729E21C0D35110038294E /* CoreImageDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreImageDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE729E61C0D35110038294E /* CoreImageDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreImageDemoUITests.swift; sourceTree = "<group>"; };
 		DCE729E81C0D35110038294E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCE729F41C0D35FE0038294E /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				DCE729C61C0D35110038294E /* AppDelegate.swift */,
 				DCE729C81C0D35110038294E /* ViewController.swift */,
 				DCE729CA1C0D35110038294E /* Main.storyboard */,
+				DCE729F41C0D35FE0038294E /* image.png */,
 				DCE729CD1C0D35110038294E /* Assets.xcassets */,
 				DCE729CF1C0D35110038294E /* LaunchScreen.storyboard */,
 				DCE729D21C0D35110038294E /* Info.plist */,
@@ -232,6 +235,7 @@
 				DCE729D11C0D35110038294E /* LaunchScreen.storyboard in Resources */,
 				DCE729CE1C0D35110038294E /* Assets.xcassets in Resources */,
 				DCE729CC1C0D35110038294E /* Main.storyboard in Resources */,
+				DCE729F51C0D35FE0038294E /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,13 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3Y-de-I7p">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f3Y-de-I7p">
                                 <rect key="frame" x="0.0" y="28" width="600" height="420"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="420" id="Daw-WZ-0Cd"/>
+                                </constraints>
                             </imageView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jCf-LB-MBy">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jCf-LB-MBy">
                                 <rect key="frame" x="198" y="472" width="204" height="31"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="uJB-aT-6wk"/>
+                                </constraints>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIL-94-mDe">
                                 <rect key="frame" x="491" y="558" width="89" height="30"/>
@@ -43,11 +49,16 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="jCf-LB-MBy" firstAttribute="top" secondItem="f3Y-de-I7p" secondAttribute="bottom" constant="24" id="F5k-xI-IuO"/>
                             <constraint firstItem="f3Y-de-I7p" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="JuM-Nz-YCO"/>
                             <constraint firstItem="f3Y-de-I7p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TIW-gz-SHo"/>
                             <constraint firstAttribute="trailing" secondItem="f3Y-de-I7p" secondAttribute="trailing" id="Vh9-8q-y2c"/>
+                            <constraint firstItem="f3Y-de-I7p" firstAttribute="centerX" secondItem="jCf-LB-MBy" secondAttribute="centerX" id="X2G-sQ-Y5Y"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="f3Y-de-I7p" id="O7Y-G8-NCD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

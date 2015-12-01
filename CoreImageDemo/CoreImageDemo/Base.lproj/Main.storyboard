@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -34,15 +35,18 @@
                                     <action selector="amountSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="kgv-tJ-oXG"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIL-94-mDe">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIL-94-mDe">
                                 <rect key="frame" x="491" y="558" width="89" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Photo Album">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loadPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RHw-lk-TOU"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXU-s2-oYS">
-                                <rect key="frame" x="20" y="558" width="101" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXU-s2-oYS">
+                                <rect key="frame" x="20" y="558" width="99" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Save to Album">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -52,11 +56,15 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="tXU-s2-oYS" secondAttribute="leading" id="9XZ-Tf-j87"/>
+                            <constraint firstItem="tXU-s2-oYS" firstAttribute="centerY" secondItem="KIL-94-mDe" secondAttribute="centerY" id="AHt-Ap-mIo"/>
                             <constraint firstItem="jCf-LB-MBy" firstAttribute="top" secondItem="f3Y-de-I7p" secondAttribute="bottom" constant="24" id="F5k-xI-IuO"/>
                             <constraint firstItem="f3Y-de-I7p" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="JuM-Nz-YCO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KIL-94-mDe" secondAttribute="trailing" id="KDx-QX-qeJ"/>
                             <constraint firstItem="f3Y-de-I7p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TIW-gz-SHo"/>
                             <constraint firstAttribute="trailing" secondItem="f3Y-de-I7p" secondAttribute="trailing" id="Vh9-8q-y2c"/>
                             <constraint firstItem="f3Y-de-I7p" firstAttribute="centerX" secondItem="jCf-LB-MBy" secondAttribute="centerX" id="X2G-sQ-Y5Y"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KIL-94-mDe" secondAttribute="bottom" constant="12" id="ZAw-Wk-LiS"/>
                         </constraints>
                     </view>
                     <connections>

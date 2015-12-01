@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     /*
         CIFilter 滤镜
@@ -70,5 +70,24 @@ class ViewController: UIViewController {
         self.imageView.image = newImg
         
     }
+    
+    @IBAction func loadPhoto(sender: AnyObject) {
+        let pickerC = UIImagePickerController()
+        pickerC.delegate = self
+        self.presentViewController(pickerC, animated: true, completion: nil)
+    }
+    
+    // MARK: - UIImagePickerControllerDelegate
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        print("[line=83]image=\(image), info=\(editingInfo)")
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+            print("[line=87]info=\(info)")
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
 }
 

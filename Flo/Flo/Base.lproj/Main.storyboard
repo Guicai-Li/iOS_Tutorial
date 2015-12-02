@@ -27,11 +27,26 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="juV-fM-O0C" customClass="CounterView" customModule="Flo" customModuleProvider="target">
                                 <rect key="frame" x="185" y="98" width="230" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6j-FG-jgi">
+                                        <rect key="frame" x="95" y="95" width="40" height="40"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="BXO-sA-wib"/>
+                                            <constraint firstAttribute="width" constant="40" id="LGt-er-gYq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="8Tv-36-uHc"/>
                                     <constraint firstAttribute="width" constant="230" id="D03-Ch-fmX"/>
+                                    <constraint firstItem="D6j-FG-jgi" firstAttribute="centerY" secondItem="juV-fM-O0C" secondAttribute="centerY" id="IcO-0f-9R1"/>
+                                    <constraint firstItem="D6j-FG-jgi" firstAttribute="centerX" secondItem="juV-fM-O0C" secondAttribute="centerX" id="XdZ-H1-jD8"/>
                                 </constraints>
                             </view>
                         </subviews>

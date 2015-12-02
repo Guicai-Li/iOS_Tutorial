@@ -24,6 +24,9 @@
                                     <constraint firstAttribute="height" constant="100" id="9CZ-NP-Soj"/>
                                     <constraint firstAttribute="width" constant="100" id="b1e-aw-jE1"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="btnPushButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DLW-AU-6nC"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="juV-fM-O0C" customClass="CounterView" customModule="Flo" customModuleProvider="target">
                                 <rect key="frame" x="185" y="98" width="230" height="230"/>
@@ -59,6 +62,10 @@
                             <constraint firstItem="5DY-u4-aVP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="111" id="MLY-yY-8Qc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="counterLabel" destination="D6j-FG-jgi" id="BBw-vJ-n7f"/>
+                        <outlet property="counterView" destination="juV-fM-O0C" id="grG-zY-vMV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

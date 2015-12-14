@@ -27,7 +27,7 @@ Writing Objective-C? Check out our [Objective-C Style Guide](https://github.com/
   * [Syntactic Sugar](#syntactic-sugar)
 * [Control Flow](#control-flow)
 * [Semicolons](#semicolons)
-* [Language](#language)
+* [关于英语](#关于英语)
 * [Copyright Statement](#copyright-statement)
 * [Smiley Face](#smiley-face)
 * [Credits](#credits)
@@ -542,16 +542,18 @@ let swift = "not a scripting language";
 
 **NOTE**: Swift is very different to JavaScript, where omitting semicolons is [generally considered unsafe](http://stackoverflow.com/questions/444080/do-you-recommend-using-semicolons-after-every-statement-in-javascript)
 
-## Language
+## 关于英语
 
-Use US English spelling to match Apple's API.
+请正确书写英文单词。
 
-**Preferred:**
+**推荐:**
+
 ```swift
 let color = "red"
 ```
 
-**Not Preferred:**
+**不推荐:**
+
 ```swift
 let colour = "red"
 ```

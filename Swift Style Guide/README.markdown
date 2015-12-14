@@ -485,18 +485,18 @@ var names: [String] = []
 **备注**: 变量名的命名规则尤为重要，最佳的方式，可以通过看变量名确定变量类型。
 
 
-### Syntactic Sugar
+### 语法糖
 
-Prefer the shortcut versions of type declarations over the full generics syntax.
+**推荐:**
 
-**Preferred:**
 ```swift
 var deviceModels: [String]
 var employees: [Int: String]
 var faxNumber: Int?
 ```
 
-**Not Preferred:**
+**不推荐:**
+
 ```swift
 var deviceModels: Array<String>
 var employees: Dictionary<Int, String>

@@ -13,7 +13,7 @@
   * [Self的使用](#Self的使用)
   * [Protocol协议的优美写法](#Protocol协议的优美写法)
   * [计算属性](#计算属性)
-* [Function Declarations](#function-declarations)
+* [函数声明](#函数声明)
 * [Closure Expressions](#closure-expressions)
 * [Types](#types)
   * [Constants](#constants)
@@ -305,9 +305,9 @@ var diameter: Double {
 }
 ```
 
-## Function Declarations
+## 函数声明
 
-Keep short function declarations on one line including the opening brace:
+尽可能的保持函数的简短声明：
 
 ```swift
 func reticulateSplines(spline: [Double]) -> Bool {
@@ -315,7 +315,7 @@ func reticulateSplines(spline: [Double]) -> Bool {
 }
 ```
 
-For functions with long signatures, add line breaks at appropriate points and add an extra indent on subsequent lines:
+当遇到函数名过长时，使用换行并添加额外的缩紧来使得代码看起来优雅。
 
 ```swift
 func reticulateSplines(spline: [Double], adjustmentFactor: Double,

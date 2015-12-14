@@ -1,0 +1,3 @@
+[submodule "Swift Style Guide/swift-style-guide"]
+	path = Swift Style Guide/swift-style-guide
+	url = https://github.com/raywenderlich/swift-style-guide.git

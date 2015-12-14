@@ -22,7 +22,7 @@
   * [类型推断](#类型推断)
   * [语法糖](#语法糖)
 * [控制流](#控制流)
-* [Semicolons](#semicolons)
+* [分号;](#分号;)
 * [关于英语](#关于英语)
 
 
@@ -534,25 +534,26 @@ for var i = 0; i < attendeeList.count; i++ {
 ```
 
 
-## Semicolons
+## 分号;
 
-Swift does not require a semicolon after each statement in your code. They are only required if you wish to combine multiple statements on a single line.
+Swift 不需要在每行末尾添加`;`，如果当在同一行中，添加多行语句时，还是需要使用`;`分割。
 
-Do not write multiple statements on a single line separated with semicolons.
+通常不建议在一行中写多行语句。
 
-The only exception to this rule is the `for-conditional-increment` construct, which requires semicolons. However, alternative `for-in` constructs should be used where possible.
 
-**Preferred:**
+唯一例外的是`for-conditional-increment`中的参数，需要使用`;`隔开。
+
+**推荐:**
+
 ```swift
 let swift = "not a scripting language"
 ```
 
-**Not Preferred:**
+**不推荐:**
+
 ```swift
 let swift = "not a scripting language";
 ```
-
-**NOTE**: Swift is very different to JavaScript, where omitting semicolons is [generally considered unsafe](http://stackoverflow.com/questions/444080/do-you-recommend-using-semicolons-after-every-statement-in-javascript)
 
 ## 关于英语
 

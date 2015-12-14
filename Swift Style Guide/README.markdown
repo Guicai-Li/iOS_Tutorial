@@ -1,19 +1,15 @@
-# [译]The Official raywenderlich.com Swift Style Guide.
+# 关于Swift的代码规范
 
-This style guide is different from others you may see, because the focus is centered on readability for print and the web. We created this style guide to keep the code in our books, tutorials, and starter kits nice and consistent — even though we have many different authors working on the books.
+参考原文来自：[The official Swift style guide for raywenderlich.com.](https://github.com/raywenderlich/swift-style-guide#prose)
 
-Our overarching goals are conciseness, readability, and simplicity.
-
-Writing Objective-C? Check out our [Objective-C Style Guide](https://github.com/raywenderlich/objective-c-style-guide) too.
-
-## Table of Contents
+## 目录
 
 * [命名规范](#命名规范)
   * [Prose](#prose)
   * [关于引入模块](#关于引入模块)
 * [空格以及换行缩进](#空格以及换行缩进)
-* [Comments](#comments)
-* [Classes and Structures](#classes-and-structures)
+* [注释](#注释)
+* [类与结构体](#类与结构体)
   * [Use of Self](#use-of-self)
   * [Protocol Conformance](#protocol-conformance)
   * [Computed Properties](#computed-properties)
@@ -163,26 +159,36 @@ else {
 
 * 建议在代码中添加部分注释，使得整体看起来清晰有组织。另外，每个方法负责独立的功能，尽可能降低方法的复杂度。
 
-## Comments
+## 注释
 
-When they are needed, use comments to explain **why** a particular piece of code does something. Comments must be kept up-to-date or deleted.
+代码总有看不懂的时候，注释还是有必要的。添加适量的注释，可以帮助你的小伙伴解释为什么要这么写？或者在之后的那一年，如果你对这块业务熟烂透了，那就没必要了，但是当你在看到时候，自己都遗忘了这里的逻辑是如何写的，这就体现出注释的重要性了。
 
-Avoid block comments inline with code, as the code should be as self-documenting as possible. *Exception: This does not apply to those comments used to generate documentation.*
+关于注释的相关姿势请转步：[Swift Documentation](http://nshipster.cn/swift-documentation/)
 
+## 类与结构体
 
-## Classes and Structures
+### 类和结构体的选择
 
-### Which one to use?
+在你的代码中，你可以使用类和结构体来定义你的自定义数据类型。
 
-Remember, structs have [value semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_144). Use structs for things that do not have an identity. An array that contains [a, b, c] is really the same as another array that contains [a, b, c] and they are completely interchangeable. It doesn't matter whether you use the first array or the second, because they represent the exact same thing. That's why arrays are structs.
+然而，结构体实例总是通过值传递，类实例总是通过引用传递。这意味两者适用不同的任务。当你在考虑一个工程项目的数据构造和功能的时候，你需要决定每个数据构造是定义成类还是结构体。
 
-Classes have [reference semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_145). Use classes for things that do have an identity or a specific life cycle. You would model a person as a class because two person objects are two different things. Just because two people have the same name and birthdate, doesn't mean they are the same person. But the person's birthdate would be a struct because a date of 3 March 1950 is the same as any other date object for 3 March 1950. The date itself doesn't have an identity.
+按照通用的准则，当符合一条或多条以下条件时，请考虑构建结构体：
 
-Sometimes, things should be structs but need to conform to `AnyObject` or are historically modeled as classes already (`NSDate`, `NSSet`). Try to follow these guidelines as closely as possible.
+结构体的主要目的是用来封装少量相关简单数据值。
+有理由预计一个结构体实例在赋值或传递时，封装的数据将会被拷贝而不是被引用。
+任何在结构体中储存的值类型属性，也将会被拷贝，而不是被引用。
+结构体不需要去继承另一个已存在类型的属性或者行为。
 
-### Example definition
+> 原文
 
-Here's an example of a well-styled class definition:
+- Remember, structs have [value semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_144). Use structs for things that do not have an identity. An array that contains [a, b, c] is really the same as another array that contains [a, b, c] and they are completely interchangeable. It doesn't matter whether you use the first array or the second, because they represent the exact same thing. That's why arrays are structs.
+
+- Classes have [reference semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_145). Use classes for things that do have an identity or a specific life cycle. You would model a person as a class because two person objects are two different things. Just because two people have the same name and birthdate, doesn't mean they are the same person. But the person's birthdate would be a struct because a date of 3 March 1950 is the same as any other date object for 3 March 1950. The date itself doesn't have an identity.
+
+- Sometimes, things should be structs but need to conform to `AnyObject` or are historically modeled as classes already (`NSDate`, `NSSet`). Try to follow these guidelines as closely as possible.
+
+### 举个例子
 
 ```swift
 class Circle: Shape {
@@ -221,12 +227,12 @@ class Circle: Shape {
 }
 ```
 
-The example above demonstrates the following style guidelines:
+另外，根据上面的例子，可以总结出以下几点：
 
- + Specify types for properties, variables, constants, argument declarations and other statements with a space after the colon but not before, e.g. `x: Int`, and `Circle: Shape`.
- + Define multiple variables and structures on a single line if they share a common purpose / context.
- + Indent getter and setter definitions and property observers.
- + Don't add modifiers such as `internal` when they're already the default. Similarly, don't repeat the access modifier when overriding a method.
+ + 格式： 变量名：类型
+ + 在同一行上声明变量或者结构体，以逗号分隔，变量类型相同(变量or常量)。
+ + getter、setter方法在变量后尾随，换行缩进。
+ + 不需要添加`internal `修饰符，默认已添加。类似的，不要重复覆盖修饰符。
 
 
 ### Use of Self

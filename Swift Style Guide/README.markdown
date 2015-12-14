@@ -8,7 +8,7 @@ Writing Objective-C? Check out our [Objective-C Style Guide](https://github.com/
 
 ## Table of Contents
 
-* [Naming](#naming)
+* [命名规范](#命名规范)
   * [Prose](#prose)
   * [Class Prefixes](#class-prefixes)
 * [Spacing](#spacing)
@@ -33,11 +33,11 @@ Writing Objective-C? Check out our [Objective-C Style Guide](https://github.com/
 * [Credits](#credits)
 
 
-## Naming
+## 命名规范
 
-Use descriptive names with camel case for classes, methods, variables, etc. Class names should be capitalized, while method names and variables should start with a lower case letter.
+建议使用描述性的方式命名类、方法、变量等。类名需要遵循驼[峰式结构](https://zh.wikipedia.org/wiki/%E9%A7%9D%E5%B3%B0%E5%BC%8F%E5%A4%A7%E5%B0%8F%E5%AF%AB),首字母大写，而方法名、变量名则以小写字母开始。
 
-**Preferred:**
+**推荐:**
 
 ```swift
 private let maximumWidgetCount = 100
@@ -48,7 +48,7 @@ class WidgetContainer {
 }
 ```
 
-**Not Preferred:**
+**不推荐:**
 
 ```swift
 let MAX_WIDGET_COUNT = 100
@@ -59,7 +59,8 @@ class app_widgetContainer {
 }
 ```
 
-For functions and init methods, prefer named parameters for all arguments unless the context is very clear. Include external parameter names if it makes function calls more readable.
+针对函数和初始化方法中的参数列表，除非参数结构清晰，建议使用外部参数名来使得整个方法看起来非常清楚。
+
 
 ```swift
 func dateFromString(dateString: String) -> NSDate
@@ -72,7 +73,7 @@ convertPointAt(column: 42, row: 13)
 timedAction(afterDelay: 1.0, perform: someOtherAction)
 ```
 
-For methods, follow the standard Apple convention of referring to the first parameter in the method name:
+苹果开发者大会上提到的例子：
 
 ```swift
 class Counter {
@@ -81,9 +82,9 @@ class Counter {
 }
 ```
 
-### Enumerations
+### 枚举
 
-Use UpperCamelCase for enumeration values:
+使用enum关键词来创建枚举
 
 ```swift
 enum Shape {

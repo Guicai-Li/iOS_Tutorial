@@ -20,8 +20,8 @@
   * [Optionals](#optionals)
   * [结构体初始化](#结构体初始化)
   * [类型推断](#类型推断)
-  * [Syntactic Sugar](#syntactic-sugar)
-* [Control Flow](#control-flow)
+  * [语法糖](#语法糖)
+* [控制流](#控制流)
 * [Semicolons](#semicolons)
 * [关于英语](#关于英语)
 
@@ -504,11 +504,12 @@ var faxNumber: Optional<Int>
 ```
 
 
-## Control Flow
+## 控制流
 
-Prefer the `for-in` style of `for` loop over the `for-condition-increment` style.
+建议使用`for-in`，`for-condition-increment` 的方式遍历。
 
-**Preferred:**
+**推荐:**
+
 ```swift
 for _ in 0..<3 {
   println("Hello three times")
@@ -519,7 +520,8 @@ for (index, person) in attendeeList.enumerate() {
 }
 ```
 
-**Not Preferred:**
+**不推荐:**
+
 ```swift
 for var i = 0; i < 3; i++ {
   println("Hello three times")

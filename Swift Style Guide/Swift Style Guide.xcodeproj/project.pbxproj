@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DCB035001C1E5A8400380586 /* Naming.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB034FF1C1E5A8400380586 /* Naming.swift */; };
 		DCB304B91C1E5A1300E960A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB304B81C1E5A1300E960A2 /* AppDelegate.swift */; };
 		DCB304BB1C1E5A1300E960A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB304BA1C1E5A1300E960A2 /* ViewController.swift */; };
 		DCB304BE1C1E5A1300E960A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCB304BC1C1E5A1300E960A2 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DCB034FF1C1E5A8400380586 /* Naming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Naming.swift; sourceTree = "<group>"; };
 		DCB304B51C1E5A1300E960A2 /* Swift Style Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift Style Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB304B81C1E5A1300E960A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCB304BA1C1E5A1300E960A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				DCB304B81C1E5A1300E960A2 /* AppDelegate.swift */,
 				DCB304BA1C1E5A1300E960A2 /* ViewController.swift */,
+				DCB034FF1C1E5A8400380586 /* Naming.swift */,
 				DCB304BC1C1E5A1300E960A2 /* Main.storyboard */,
 				DCB304BF1C1E5A1300E960A2 /* Assets.xcassets */,
 				DCB304C11C1E5A1300E960A2 /* LaunchScreen.storyboard */,
@@ -258,6 +261,7 @@
 			files = (
 				DCB304BB1C1E5A1300E960A2 /* ViewController.swift in Sources */,
 				DCB304B91C1E5A1300E960A2 /* AppDelegate.swift in Sources */,
+				DCB035001C1E5A8400380586 /* Naming.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +488,7 @@
 				DCB304DF1C1E5A1300E960A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCB304E01C1E5A1300E960A2 /* Build configuration list for PBXNativeTarget "Swift Style GuideTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +497,7 @@
 				DCB304E21C1E5A1300E960A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCB304E31C1E5A1300E960A2 /* Build configuration list for PBXNativeTarget "Swift Style GuideUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +506,7 @@
 				DCB304E51C1E5A1300E960A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

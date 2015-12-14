@@ -14,7 +14,7 @@
   * [Protocol协议的优美写法](#Protocol协议的优美写法)
   * [计算属性](#计算属性)
 * [函数声明](#函数声明)
-* [Closure Expressions](#closure-expressions)
+* [闭包](#闭包)
 * [Types](#types)
   * [Constants](#constants)
   * [Optionals](#optionals)
@@ -325,11 +325,12 @@ func reticulateSplines(spline: [Double], adjustmentFactor: Double,
 ```
 
 
-## Closure Expressions
+## 闭包
 
-Use trailing closure syntax only if there's a single closure expression parameter at the end of the argument list. Give the closure parameters descriptive names.
+使用闭包时，当只有一个参数时，可直接尾随闭包。
 
-**Preferred:**
+**推荐:**
+
 ```swift
 UIView.animateWithDuration(1.0) {
   self.myView.alpha = 0
@@ -345,7 +346,8 @@ UIView.animateWithDuration(1.0,
 )
 ```
 
-**Not Preferred:**
+**不推荐:**
+
 ```swift
 UIView.animateWithDuration(1.0, animations: {
   self.myView.alpha = 0
@@ -359,7 +361,7 @@ UIView.animateWithDuration(1.0,
 }
 ```
 
-For single-expression closures where the context is clear, use implicit returns:
+单行表达式闭包可以通过隐藏return关键字来隐式返回单行表达式的结果。
 
 ```swift
 attendeeList.sort { a, b in

@@ -122,16 +122,17 @@ let myClass = MyModule.UsefulClass()
 ```
 
 
-## Spacing
+## 空格以及换行缩进
 
-* Indent using 2 spaces rather than tabs to conserve space and help prevent line wrapping. Be sure to set this preference in Xcode as shown below:
+* 根据下图设置缩进以及Tab键缩进2个字节：
 
   ![Xcode indent settings](screens/indentation.png)
 
-* Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement but close on a new line.
-* Tip: You can re-indent by selecting some code (or ⌘A to select all) and then Control-I (or Editor\Structure\Re-Indent in the menu). Some of the Xcode template code will have 4-space tabs hard coded, so this is a good way to fix that.
+* 针对方法或者其他结构(例如：`if`/`else`/`switch`/`while`等)，建议大括号尾随方法后，不建议换行。
+* 小技巧: 使用⌘A全选或者只选中部分代码，使用Control-I(或者点击菜单 Editor\Structure\Re-Indent)自动格式化代码。
 
-**Preferred:**
+**推荐:**
+
 ```swift
 if user.isHappy {
   // Do something
@@ -140,7 +141,8 @@ if user.isHappy {
 }
 ```
 
-**Not Preferred:**
+**不推荐:**
+
 ```swift
 if user.isHappy
 {
@@ -151,7 +153,7 @@ else {
 }
 ```
 
-* There should be exactly one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but having too many sections in a method often means you should refactor into several methods.
+* 建议在代码中添加部分注释，使得整体看起来清晰有组织。另外，每个方法负责独立的功能，尽可能降低方法的复杂度。
 
 ## Comments
 

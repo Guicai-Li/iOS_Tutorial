@@ -18,7 +18,7 @@
 * [类型](#类型)
   * [常量](#常量)
   * [Optionals](#optionals)
-  * [Struct Initializers](#struct-initializers)
+  * [结构体初始化](#结构体初始化)
   * [Type Inference](#type-inference)
   * [Syntactic Sugar](#syntactic-sugar)
 * [Control Flow](#control-flow)
@@ -418,7 +418,8 @@ When naming optional variables and properties, avoid naming them like `optionalS
 
 For optional binding, shadow the original name when appropriate rather than using names like `unwrappedView` or `actualLabel`.
 
-**Preferred:**
+**推荐:**
+
 ```swift
 var subview: UIView?
 var volume: Double?
@@ -429,7 +430,8 @@ if let subview = subview, volume = volume {
 }
 ```
 
-**Not Preferred:**
+**不推荐:**
+
 ```swift
 var optionalSubview: UIView?
 var volume: Double?
@@ -441,23 +443,23 @@ if let unwrappedSubview = optionalSubview {
 }
 ```
 
-### Struct Initializers
+### 结构体初始化
 
-Use the native Swift struct initializers rather than the legacy CGGeometry constructors.
+**推荐:**
 
-**Preferred:**
 ```swift
 let bounds = CGRect(x: 40, y: 20, width: 120, height: 80)
 let centerPoint = CGPoint(x: 96, y: 42)
 ```
 
-**Not Preferred:**
+**不推荐:**
+
 ```swift
 let bounds = CGRectMake(40, 20, 120, 80)
 let centerPoint = CGPointMake(96, 42)
 ```
 
-Prefer the struct-scope constants `CGRect.infinite`, `CGRect.null`, etc. over global constants `CGRectInfinite`, `CGRectNull`, etc. For existing variables, you can use the shorter `.zero`.
+使用`.zero`来代替`CGRect.infinite`, `CGRect.null`, `CGRectInfinite`, `CGRectNull`等。
 
 ### Type Inference
 

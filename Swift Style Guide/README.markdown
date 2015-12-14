@@ -19,7 +19,7 @@
   * [常量](#常量)
   * [Optionals](#optionals)
   * [结构体初始化](#结构体初始化)
-  * [Type Inference](#type-inference)
+  * [类型推断](#类型推断)
   * [Syntactic Sugar](#syntactic-sugar)
 * [Control Flow](#control-flow)
 * [Semicolons](#semicolons)
@@ -461,11 +461,12 @@ let centerPoint = CGPointMake(96, 42)
 
 使用`.zero`来代替`CGRect.infinite`, `CGRect.null`, `CGRectInfinite`, `CGRectNull`等。
 
-### Type Inference
+### 类型推断
 
-Prefer compact code and let the compiler infer the type for a constant or variable, unless you need a specific type other than the default such as `CGFloat` or `Int16`.
+尽可能将代码简化，让编译器推断类型，除非特殊指定类型。例如：`CGFloat`, `Int16` etc.
 
-**Preferred:**
+**推荐:**
+
 ```swift
 let message = "Click the button"
 let currentBounds = computeViewBounds()
@@ -473,14 +474,15 @@ var names = [String]()
 let maximumWidth: CGFloat = 106.5
 ```
 
-**Not Preferred:**
+**不推荐:**
+
 ```swift
 let message: String = "Click the button"
 let currentBounds: CGRect = computeViewBounds()
 var names: [String] = []
 ```
 
-**NOTE**: Following this guideline means picking descriptive names is even more important than before.
+**备注**: 变量名的命名规则尤为重要，最佳的方式，可以通过看变量名确定变量类型。
 
 
 ### Syntactic Sugar

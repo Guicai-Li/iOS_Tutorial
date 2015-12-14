@@ -10,7 +10,7 @@
 * [空格以及换行缩进](#空格以及换行缩进)
 * [注释](#注释)
 * [类与结构体](#类与结构体)
-  * [Use of Self](#use-of-self)
+  * [Self的使用](#Self的使用)
   * [Protocol Conformance](#protocol-conformance)
   * [Computed Properties](#computed-properties)
 * [Function Declarations](#function-declarations)
@@ -232,11 +232,13 @@ class Circle: Shape {
  + 不需要添加`internal `修饰符，默认已添加。类似的，不要重复覆盖修饰符。
 
 
-### Use of Self
+### Self的使用
 
-For conciseness, avoid using `self` since Swift does not require it to access an object's properties or invoke its methods.
+简单来说，尽量避免使用self直接访问属性或者调用方法。
 
-Use `self` when required to differentiate between property names and arguments in initializers, and when referencing properties in closure expressions (as required by the compiler):
+当无法区分属性或者参数时，这时候应该使用self
+
+举个例子：
 
 ```swift
 class BoardLocation {

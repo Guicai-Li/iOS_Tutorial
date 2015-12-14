@@ -11,7 +11,7 @@
 * [注释](#注释)
 * [类与结构体](#类与结构体)
   * [Self的使用](#Self的使用)
-  * [Protocol Conformance](#protocol-conformance)
+  * [Protocol协议的优美写法](#Protocol协议的优美写法)
   * [Computed Properties](#computed-properties)
 * [Function Declarations](#function-declarations)
 * [Closure Expressions](#closure-expressions)
@@ -255,13 +255,12 @@ class BoardLocation {
 }
 ```
 
-### Protocol Conformance
+### Protocol协议的优美写法
 
-When adding protocol conformance to a class, prefer adding a separate class extension for the protocol methods. This keeps the related methods grouped together with the protocol and can simplify instructions to add a protocol to a class with its associated methods.
+当某类遵循协议的时，比较优美的写法，使用扩展，将每个协议与类分离，降低模块之间的耦合度。
 
-Also, don't forget the `// MARK: -` comment to keep things well-organized!
+**推荐:**
 
-**Preferred:**
 ```swift
 class MyViewcontroller: UIViewController {
   // class stuff here
@@ -278,7 +277,8 @@ extension MyViewcontroller: UIScrollViewDelegate {
 }
 ```
 
-**Not Preferred:**
+**不推荐:**
+
 ```swift
 class MyViewcontroller: UIViewController, UITableViewDataSource, UIScrollViewDelegate {
   // all methods

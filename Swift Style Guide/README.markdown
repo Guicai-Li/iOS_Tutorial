@@ -15,8 +15,8 @@
   * [计算属性](#计算属性)
 * [函数声明](#函数声明)
 * [闭包](#闭包)
-* [Types](#types)
-  * [Constants](#constants)
+* [类型](#类型)
+  * [常量](#常量)
   * [Optionals](#optionals)
   * [Struct Initializers](#struct-initializers)
   * [Type Inference](#type-inference)
@@ -370,30 +370,29 @@ attendeeList.sort { a, b in
 ```
 
 
-## Types
+## 类型
 
-Always use Swift's native types when available. Swift offers bridging to Objective-C so you can still use the full set of methods as needed.
+尽可能用Swift中的类型，此外，Swift也支持Objective-C，所以仍然可以使用Objective-C中的类型。
 
-**Preferred:**
+**推荐:**
+
 ```swift
 let width = 120.0                                    // Double
 let widthString = (width as NSNumber).stringValue    // String
 ```
 
-**Not Preferred:**
+**不推荐:**
+
 ```swift
 let width: NSNumber = 120.0                          // NSNumber
 let widthString: NSString = width.stringValue        // NSString
 ```
 
-In Sprite Kit code, use `CGFloat` if it makes the code more succinct by avoiding too many conversions.
+### 常量
 
-### Constants
+定义常量可以使用`let`定义，也可以使用`var`定义。通常使用`let`代替`var`声明常量。
 
-Constants are defined using the `let` keyword, and variables with the `var` keyword. Always use `let` instead of `var` if the value of the variable will not change.
-
-**Tip:** A good technique is to define everything using `let` and only change it to `var` if the compiler complains!
-
+**小技巧:** 默认使用`let`定义任何属性，只有当该属性发生改变时，使用`var`，另外编译器会提示你是否正确。
 
 ### Optionals
 

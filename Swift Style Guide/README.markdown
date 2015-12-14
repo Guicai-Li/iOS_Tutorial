@@ -11,7 +11,7 @@ Writing Objective-C? Check out our [Objective-C Style Guide](https://github.com/
 * [命名规范](#命名规范)
   * [Prose](#prose)
   * [Class Prefixes](#class-prefixes)
-* [Spacing](#spacing)
+* [空格以及换行缩进](#空格以及换行缩进)
 * [Comments](#comments)
 * [Classes and Structures](#classes-and-structures)
   * [Use of Self](#use-of-self)

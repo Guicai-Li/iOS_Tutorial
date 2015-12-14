@@ -66,7 +66,9 @@ convertPointAt(column: 42, row: 13)
 timedAction(afterDelay: 1.0, perform: someOtherAction)
 ```
 
-苹果开发者大会上提到的例子：
+`~~苹果开发者大会上提到的例子：~~`
+
+[使用With 和 By 增加代码的可读性](https://github.com/raywenderlich/swift-style-guide/issues/124#issuecomment-164396386)
 
 ```swift
 class Counter {

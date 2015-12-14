@@ -10,7 +10,7 @@ Writing Objective-C? Check out our [Objective-C Style Guide](https://github.com/
 
 * [命名规范](#命名规范)
   * [Prose](#prose)
-  * [Class Prefixes](#class-prefixes)
+  * [关于引入模块](#关于引入模块)
 * [空格以及换行缩进](#空格以及换行缩进)
 * [Comments](#comments)
 * [Classes and Structures](#classes-and-structures)
@@ -111,9 +111,17 @@ When in doubt, look at how Xcode lists the method in the jump bar – our style
 
 ![Methods in Xcode jump bar](screens/xcode-jump-bar.png)
 
-### Class Prefixes
+### 关于引入模块
 
-Swift types are automatically namespaced by the module that contains them and you should not add a class prefix. If two names from different modules collide you can disambiguate by prefixing the type name with the module name.
+在Swift开发中会自动加载所有模块，通常不需要导入模块。除非当遇到两个模块命名冲突时，可手动引入类，避免冲突。
+
+**推荐:**
+
+```swift
+let myClass = MyModule.UsefulClass()
+```
+
+**不推荐:**
 
 ```swift
 import SomeModule

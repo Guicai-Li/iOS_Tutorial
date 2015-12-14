@@ -12,7 +12,7 @@
 * [类与结构体](#类与结构体)
   * [Self的使用](#Self的使用)
   * [Protocol协议的优美写法](#Protocol协议的优美写法)
-  * [Computed Properties](#computed-properties)
+  * [计算属性](#计算属性)
 * [Function Declarations](#function-declarations)
 * [Closure Expressions](#closure-expressions)
 * [Types](#types)
@@ -285,18 +285,18 @@ class MyViewcontroller: UIViewController, UITableViewDataSource, UIScrollViewDel
 }
 ```
 
-### Computed Properties
+### 计算属性
 
-For conciseness, if a computed property is read-only, omit the get clause. The get clause is required only when a set clause is provided.
+如果该属性只为Read-Only，默认遵循getter方法，直接写即可。
 
-**Preferred:**
+**推荐:**
 ```swift
 var diameter: Double {
   return radius * 2
 }
 ```
 
-**Not Preferred:**
+**不推荐:**
 ```swift
 var diameter: Double {
   get {
